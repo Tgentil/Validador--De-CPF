@@ -35,9 +35,10 @@ Este aplicativo foi construído usando as seguintes tecnologias:
 - HTML
 - CSS
 - JavaScript
-- [Inputmask](https://github.com/RobinHerbots/Inputmask) - Biblioteca JavaScript para formatação de entrada de texto.
-- [jQuery](https://jquery.com/) - Biblioteca JavaScript para manipulação de DOM.
+  - [Inputmask](https://github.com/RobinHerbots/Inputmask) - Biblioteca JavaScript para formatação de entrada de texto.
+  - [jQuery](https://jquery.com/) - Biblioteca JavaScript para manipulação de DOM.
 
 ## Autor
 
 * Thiago da Silveira Gentil
+
