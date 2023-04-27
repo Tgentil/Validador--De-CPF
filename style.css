@@ -16,7 +16,6 @@ header p {
 input[type="text"]:focus {
 	box-shadow: 0 0 8px #2196f3;
 	caret-color: transparent;
-
 }
 
 input[type="number"]::-webkit-inner-spin-button,
@@ -82,4 +81,8 @@ input[type="text"] {
 	max-width: 800px;
 	margin: 0 auto;
 	padding: 0 16px;
+}
+
+.fade {
+	opacity: 0.5;
 }

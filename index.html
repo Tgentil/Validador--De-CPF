@@ -27,6 +27,10 @@
 					placeholder="___.___.___-__"
 				/>
 				<button type="button" onclick="validarCPF()">Verificar</button>
+				<button type="button" onclick="gerarCPF()">Gerar CPF Válido</button>
+				<button type="button" onclick="gerarNumerosAleatorios()">
+					Gerar 11 Dígitos Aleatórios
+				</button>
 				<span id="cpfValidation"></span>
 			</form>
 			<br />
@@ -112,11 +116,11 @@
 					2) é multiplicado por 11, o segundo por 10, o terceiro por 9, e assim
 					por diante, até que o décimo dígito seja multiplicado por 2.
 				</li>
-				<br>
+				<br />
 				<li>Os resultados das multiplicações são somados.</li>
-				<br>
+				<br />
 				<li>O resultado da soma é dividido por 11 e o resto é obtido.</li>
-				<br>
+				<br />
 				<li>
 					Se o resto da divisão for menor que 2, o segundo dígito verificador é
 					igual a 0. Caso contrário, o segundo dígito verificador é igual a 11
@@ -133,11 +137,11 @@
 					1 x 11 + 2 x 10 + 3 x 9 + 4 x 8 + 5 x 7 + 6 x 6 + 7 x 5 + 8 x 4 + 9 x
 					3 + 2 x 2 = 358
 				</li>
-				<br>
+				<br />
 				<li>O resultado da soma é 358.</li>
-				<br>
+				<br />
 				<li>358 / 11 = 32 com resto 6.</li>
-				<br>
+				<br />
 				<li>
 					Como o resto da divisão é maior ou igual a 2, o segundo dígito
 					verificador é igual a 11 - 6, ou seja, 5.

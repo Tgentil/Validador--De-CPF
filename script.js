@@ -65,6 +65,14 @@ function validarCPF() {
 	var cpf = cpfInput.value;
 	cpf = cpf.replace(/\D/g, "");
 
+	// Adiciona classe CSS temporária para diminuir a opacidade do elemento do span
+	cpfValidation.classList.add("fade");
+
+	// Define uma função anônima para remover a classe CSS temporária após um segundo
+	setTimeout(function () {
+		cpfValidation.classList.remove("fade");
+	}, 400);
+
 	// Verifica se o CPF possui 11 dígitos e não é uma sequência de números repetidos
 	if (
 		cpf.length !== 11 ||
@@ -144,4 +152,53 @@ function toggleMode() {
 	} else {
 		button.textContent = "Alterar para Dark Mode";
 	}
+}
+
+// Define a função "gerarCPF" que gera um CPF aleatério
+function gerarCPF() {
+	var cpf = "";
+
+	// Gera 9 números aleatórios e concatena na variável cpf
+	for (var i = 0; i < 9; i++) {
+		cpf += Math.floor(Math.random() * 10);
+	}
+
+	// Calcula o primeiro dígito verificador e concatena na variável cpf
+	cpf += calcularDV(cpf);
+
+	// Calcula o segundo dígito verificador e concatena na variável cpf
+	cpf += calcularDV(cpf);
+
+	// Preenche o campo de input com o CPF gerado
+	document.getElementById("cpfInput").value = cpf;
+	aplicarMascaraCPF(); // chamando a função para atualizar a máscara
+}
+
+function calcularDV(cpf) {
+	// Inicializa a variável soma com zero
+	var soma = 0;
+
+	// Percorre cada caractere do CPF e realiza a multiplicação com o respectivo peso
+	for (var i = 0; i < cpf.length; i++) {
+		soma += parseInt(cpf.charAt(i)) * (cpf.length + 1 - i);
+	}
+
+	// Calcula o dígito verificador subtraindo o resultado da soma de 11
+	var dv = 11 - (soma % 11);
+
+	// Se o dígito verificador for maior que 9, retorna "0", senão, retorna a string com o valor do dígito verificador
+	return dv > 9 ? "0" : dv.toString();
+}
+
+// Define a função gerarNumerosAleatorios que gera 11 números aleatórios e atualiza o campo de input com o CPF gerado fake
+function gerarNumerosAleatorios() {
+	var numerosAleatorios = "";
+	// Loop que irá gerar 11 números aleatórios
+	for (var i = 0; i < 11; i++) {
+		numerosAleatorios += Math.floor(Math.random() * 10);
+	}
+	// Insere os números aleatórios gerados no campo de input de CPF
+	document.getElementById("cpfInput").value = numerosAleatorios;
+	// Chama a função que aplica a máscara de CPF no campo
+	aplicarMascaraCPF();
 }
