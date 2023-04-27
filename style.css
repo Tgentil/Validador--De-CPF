@@ -1,0 +1,85 @@
+header {
+	text-align: center;
+	margin-bottom: 32px;
+}
+
+header h1 {
+	font-size: 32px;
+	margin-bottom: 8px;
+}
+
+header p {
+	font-size: 16px;
+	color: #777;
+}
+
+input[type="text"]:focus {
+	box-shadow: 0 0 8px #2196f3;
+	caret-color: transparent;
+
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+:root {
+	--color-background: #f5f5f5;
+	--color-text: #333;
+	--color-primary: #007bff;
+	--color-secondary: #6c757d;
+}
+
+.light-mode {
+	--color-background: #f5f5f5;
+	--color-text: #333;
+	--color-primary: #007bff;
+	--color-secondary: #6c757d;
+}
+
+.dark-mode {
+	--color-background: #1a1a1a;
+	--color-text: #f5f5f5;
+	--color-primary: #007bff;
+	--color-secondary: #6c757d;
+}
+
+body {
+	background-color: var(--color-background);
+	color: var(--color-text);
+}
+
+button {
+	background-color: var(--color-primary);
+	color: #fff;
+	padding: 8px 16px;
+	border-radius: 4px;
+	border: none;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: var(--color-secondary);
+}
+
+input[type="text"] {
+	padding: 8px;
+	border-radius: 4px;
+	border: 1px solid #ccc;
+	outline: none;
+	font-size: 16px;
+}
+
+#cpfValidation {
+	font-size: 16px;
+	font-weight: bold;
+	margin-top: 8px;
+}
+
+.container {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 0 16px;
+}

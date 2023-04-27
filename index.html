@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Validador de CPF</title>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<script src="./node_modules/inputmask/dist/inputmask.js"></script>
+		<script src="node_modules/inputmask/dist/inputmask.min.js"></script>
+		<script src="node_modules/inputmask/dist/inputmask.extensions.js"></script>
+		<script src="node_modules/inputmask/dist/inputmask.numeric.extensions.js"></script>
+		<script src="./node_modules/jquery/dist/jquery.min.js"></script>
+		<script src="script.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<h1>Validador de CPF</h1>
+				<p>Verifique se um CPF é válido.</p>
+			</header>
+			<form class="center">
+				<input
+					type="text"
+					id="cpfInput"
+					name="cpf"
+					inputmode="numeric"
+					onkeyup="aplicarMascaraCPF()"
+					placeholder="___.___.___-__"
+				/>
+				<button type="button" onclick="validarCPF()">Verificar</button>
+				<span id="cpfValidation"></span>
+			</form>
+			<br />
+			<button id="modeButton" type="button" onclick="toggleMode()">
+				Alterar para modo escuro
+			</button>
+			<hr />
+			<h2>Como é feito o cálculo de verificação do CPF</h2>
+			<p>
+				O cálculo de verificação do CPF é feito por meio de um algoritmo
+				matemático que leva em conta os nove primeiros dígitos do CPF e gera dois
+				dígitos verificadores a partir desses números. Os dígitos verificadores
+				são calculados de tal forma que, ao serem acrescentados ao número original
+				do CPF, geram um resultado válido.
+			</p>
+			<p>
+				O cálculo de verificação do CPF é importante para garantir a autenticidade
+				e a integridade dos dados cadastrais das pessoas, além de ser usado em
+				diversas operações financeiras e comerciais.
+			</p>
+			<hr />
+			<h2>Como validar um CPF</h2>
+			<p>
+				Para validar um CPF, é necessário aplicar o algoritmo de cálculo de
+				verificação sobre os nove primeiros dígitos do número e comparar o
+				resultado com os dois últimos dígitos do CPF. Se os dígitos verificadores
+				forem iguais aos dois últimos dígitos do CPF, então o número é considerado
+				válido. Caso contrário, o CPF é considerado inválido.
+			</p>
+			<hr />
+			<h2>Como é feito o 1º digito verificador</h2>
+			<p>
+				O cálculo do primeiro dígito verificador do CPF é feito através dos
+				seguintes passos:
+			</p>
+			<ol>
+				<li>
+					Multiplica-se cada um dos nove primeiros dígitos do CPF pelos números
+					de 10 a 2, respectivamente. Ou seja, o primeiro dígito é multiplicado
+					por 10, o segundo por 9, o terceiro por 8, e assim por diante, até que
+					o nono dígito seja multiplicado por 2.
+				</li>
+				<br />
+				<li>Os resultados das multiplicações são somados.</li>
+				<br />
+				<li>O resultado da soma é dividido por 11 e o resto é obtido.</li>
+				<br />
+				<li>
+					Se o resto da divisão for menor que 2, o primeiro dígito verificador é
+					igual a 0. Caso contrário, o primeiro dígito verificador é igual a 11
+					menos o resto da divisão.
+				</li>
+			</ol>
+			<p>
+				Por exemplo, para um CPF fictício com os nove primeiros dígitos igual a
+				123456789, o cálculo do primeiro dígito verificador seria:
+			</p>
+			<ul>
+				<li>
+					1 x 10 + 2 x 9 + 3 x 8 + 4 x 7 + 5 x 6 + 6 x 5 + 7 x 4 + 8 x 3 + 9 x 2
+					= 285
+				</li>
+				<br />
+				<li>O resultado da soma é 285.</li>
+				<br />
+				<li>285 / 11 = 25 com resto 10.</li>
+				<br />
+				<li>
+					Como o resto da divisão é maior ou igual a 2, o primeiro dígito
+					verificador é igual a 11 - 10, ou seja, 1.
+				</li>
+			</ul>
+			<h2>Como é feito o 2º digito verificador</h2>
+			<p>
+				O cálculo do segundo dígito verificador do CPF é feito através dos
+				seguintes passos:
+			</p>
+			<ol>
+				<li>
+					Multiplica-se cada um dos dez primeiros dígitos do CPF pelos números
+					de 11 a 2, respectivamente. Ou seja, o primeiro dígito (já incluindo o
+					primeiro dígito verificador calculado anteriormente multiplicado por
+					2) é multiplicado por 11, o segundo por 10, o terceiro por 9, e assim
+					por diante, até que o décimo dígito seja multiplicado por 2.
+				</li>
+				<br>
+				<li>Os resultados das multiplicações são somados.</li>
+				<br>
+				<li>O resultado da soma é dividido por 11 e o resto é obtido.</li>
+				<br>
+				<li>
+					Se o resto da divisão for menor que 2, o segundo dígito verificador é
+					igual a 0. Caso contrário, o segundo dígito verificador é igual a 11
+					menos o resto da divisão.
+				</li>
+			</ol>
+			<p>
+				Por exemplo, para um CPF fictício com os nove primeiros dígitos igual a
+				123456789 e primeiro dígito verificador igual a 1, o cálculo do segundo
+				dígito verificador seria:
+			</p>
+			<ul>
+				<li>
+					1 x 11 + 2 x 10 + 3 x 9 + 4 x 8 + 5 x 7 + 6 x 6 + 7 x 5 + 8 x 4 + 9 x
+					3 + 2 x 2 = 358
+				</li>
+				<br>
+				<li>O resultado da soma é 358.</li>
+				<br>
+				<li>358 / 11 = 32 com resto 6.</li>
+				<br>
+				<li>
+					Como o resto da divisão é maior ou igual a 2, o segundo dígito
+					verificador é igual a 11 - 6, ou seja, 5.
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

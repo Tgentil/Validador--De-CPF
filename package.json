@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "inputmask": "^5.0.8",
+    "jquery": "^3.6.4"
+  }
+}
