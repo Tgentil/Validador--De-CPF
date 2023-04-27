@@ -2,6 +2,10 @@
 
 Este aplicativo é um validador de CPF. Ele permite que você verifique se um número de CPF é válido ou não. 
 
+## Interface
+![interface do site](/assets/interface.png)
+
+
 ## Como usar
 
 Para usar o validador de CPF, siga os passos abaixo:
