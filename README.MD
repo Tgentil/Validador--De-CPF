@@ -12,7 +12,7 @@ Para usar o validador de CPF, siga os passos abaixo:
 
 1. Clone o repositório em seu computador com o comando:
 ```
-git clone https://github.com/seu-usuario/nome-do-repositorio.git
+git clone https://github.com/Tgentil/valida--o-cpf.git
 ```
 
 2. Navegue para a pasta do projeto e execute o comando `npm install` para instalar as dependências do projeto.
