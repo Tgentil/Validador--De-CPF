@@ -1,10 +1,10 @@
 # Validador de CPF
 
-Este aplicativo é um validador de CPF. Ele permite que você verifique se um número de CPF é válido ou não.
+Este é um projeto de validador de CPF. Ele permite que você verifique se um número de CPF é válido ou não.
 
-## Interface
+## Site
 
-![interface do site](/assets/interface.png)
+https://tgentil.github.io/Validador--De-CPF/
 
 ## Como usar
 
