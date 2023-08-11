@@ -6,7 +6,8 @@ Este é um projeto de validador de CPF. Ele permite que você verifique se um n�
 
 ## Site
 
-https://tgentil.github.io/Validador--De-CPF/
+[![TGentil GitHub](https://img.shields.io/badge/Projeto-TGentil-FF4500?style=flat-square)](https://tgentil.github.io/Validador--De-CPF/)
+
 
 ## Como usar
 
