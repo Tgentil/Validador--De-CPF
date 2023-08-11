@@ -1,13 +1,8 @@
 # Validador de CPF
 
- [![GitHub](https://img.shields.io/badge/Visit-My%20Profile-0891B2?style=flat-square&logo=github)](https://github.com/Tgentil)
+ [![GitHub](https://img.shields.io/badge/Visit-My%20Profile-0891B2?style=flat-square&logo=github)](https://github.com/Tgentil) [![TGentil GitHub](https://img.shields.io/badge/Projeto-Validador-FF4500?style=flat-square)](https://tgentil.github.io/Validador--De-CPF/)
 
 Este é um projeto de validador de CPF. Ele permite que você verifique se um número de CPF é válido ou não.
-
-## Site
-
-[![TGentil GitHub](https://img.shields.io/badge/Projeto-TGentil-FF4500?style=flat-square)](https://tgentil.github.io/Validador--De-CPF/)
-
 
 ## Como usar
 
